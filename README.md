@@ -83,16 +83,7 @@ A personal finance management application built with Laravel 12, featuring inter
 
 Visit: http://localhost:8000
 
-## 📸 Screenshots
 
-### Dashboard with Charts
-![Dashboard](screenshots/dashboard.png)
-
-### Transaction Management
-![Transactions](screenshots/transactions.png)
-
-### Category Management
-![Categories](screenshots/categories.png)
 
 ## 🎯 Usage
 
