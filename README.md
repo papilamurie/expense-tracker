@@ -1,59 +1,155 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Expense Tracker 💰
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A personal finance management application built with Laravel 12, featuring interactive charts, category management, and comprehensive financial reports.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-12.x-red)
+![PHP](https://img.shields.io/badge/PHP-8.3-blue)
+![Chart.js](https://img.shields.io/badge/Chart.js-4.x-orange)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- 💵 **Income & Expense Tracking** - Track all your financial transactions
+- 📊 **Interactive Charts** - Visualize expenses by category (doughnut chart) and 6-month trends (line chart)
+- 🏷️ **Smart Categories** - Color-coded categories with emoji icons
+- 📅 **Date Filtering** - Filter by month/year to analyze spending patterns
+- 💡 **Real-time Balance** - Automatic calculation of income, expenses, and balance
+- 🔍 **Advanced Filtering** - Filter transactions by type, category, and date range
+- 🎨 **Beautiful UI** - Modern, responsive design with Tailwind CSS
+- 🔐 **Secure Authentication** - User registration and login with Laravel Breeze
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🛠️ Tech Stack
 
-## Learning Laravel
+- **Framework:** Laravel 12
+- **Authentication:** Laravel Breeze
+- **Database:** MySQL
+- **Frontend:** Blade Templates + Tailwind CSS
+- **Charts:** Chart.js
+- **PHP Version:** 8.3+
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+## 📦 Installation
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Prerequisites
+- PHP 8.2 or higher
+- Composer
+- MySQL
+- Node.js & NPM
 
-## Laravel Sponsors
+### Setup
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Clone the repository**
+```bash
+   git clone https://github.com/papilamurie/expense-tracker.git
+   cd expense-tracker
+```
 
-### Premium Partners
+2. **Install dependencies**
+```bash
+   composer install
+   npm install
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+3. **Environment setup**
+```bash
+   cp .env.example .env
+   php artisan key:generate
+```
 
-## Contributing
+4. **Configure database** (Edit `.env`)
+```env
+   DB_DATABASE=expense_tracker
+   DB_USERNAME=your_username
+   DB_PASSWORD=your_password
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. **Run migrations**
+```bash
+   php artisan migrate
+```
 
-## Code of Conduct
+6. **Seed default categories**
+```bash
+   php artisan db:seed --class=CategorySeeder
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. **Build assets**
+```bash
+   npm run build
+```
 
-## Security Vulnerabilities
+8. **Start the server**
+```bash
+   php artisan serve
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Visit: http://localhost:8000
 
-## License
+## 📸 Screenshots
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Dashboard with Charts
+![Dashboard](screenshots/dashboard.png)
+
+### Transaction Management
+![Transactions](screenshots/transactions.png)
+
+### Category Management
+![Categories](screenshots/categories.png)
+
+## 🎯 Usage
+
+1. **Register** an account
+2. **Add categories** or use the pre-seeded ones
+3. **Track transactions** - Add income and expenses
+4. **View dashboard** - See your financial overview with charts
+5. **Filter & analyze** - Use filters to understand your spending patterns
+
+## 📁 Project Structure
+```
+expense-tracker/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── DashboardController.php
+│   │   ├── TransactionController.php
+│   │   └── CategoryController.php
+│   └── Models/
+│       ├── Transaction.php
+│       ├── Category.php
+│       └── User.php
+├── database/
+│   ├── migrations/
+│   └── seeders/
+│       └── CategorySeeder.php
+└── resources/views/
+    ├── dashboard.blade.php
+    ├── transactions/
+    └── categories/
+```
+
+## 🔒 Security
+
+- CSRF protection on all forms
+- User authentication required
+- Users can only access their own data
+- SQL injection protection via Eloquent ORM
+- Password hashing with bcrypt
+
+## 🚧 Future Enhancements
+
+- [ ] Export transactions to CSV/PDF
+- [ ] Recurring transactions
+- [ ] Budget planning and alerts
+- [ ] Multi-currency support
+- [ ] Mobile app
+- [ ] Receipt upload and OCR
+
+## 📄 License
+
+Open-source software licensed under the [MIT license](LICENSE).
+
+## 👤 Author
+
+**Your Name**
+- GitHub: [@papilamurie](https://github.com/papilamurie)
+
+---
+
+⭐ If you found this project helpful, please give it a star!
